@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Clickoy India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange:   #FF8C00;
+      --orange2:  #E07800;
+      --ink:      #1A1410;
+      --ink-mid:  #4A3728;
+      --ink-soft: #9D8E7A;
+      --bg:       #FDFAF6;
+      --surface:  #FFFFFF;
+      --border:   #F0E8DE;
+      --radius:   14px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    /* ── Grain texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Header ── */
+    header {
+      position: relative;
+      background: linear-gradient(135deg, #1A1410 0%, #2C1F0F 60%, #3A2510 100%);
+      padding: 56px 24px 48px;
+      text-align: center;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(255,140,0,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(255,140,0,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,140,0,0.15);
+      border: 1px solid rgba(255,140,0,0.35);
+      border-radius: 99px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #FFB347;
+      margin-bottom: 18px;
+      position: relative; z-index: 1;
+    }
+    .header-badge span { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; display: inline-block; animation: blink 2s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      position: relative; z-index: 1;
+      margin-bottom: 10px;
+    }
+    header h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--orange), #FFB347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header-meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      position: relative; z-index: 1;
+      margin-top: 6px;
+    }
+    .header-meta strong { color: rgba(255,255,255,0.7); }
+
+    /* ── Nav strip ── */
+    .toc-strip {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 16px;
+      overflow-x: auto;
+      display: flex;
+      gap: 4px;
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      scrollbar-width: none;
+    }
+    .toc-strip::-webkit-scrollbar { display: none; }
+    .toc-strip a {
+      display: inline-block;
+      padding: 14px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .toc-strip a:hover { color: var(--orange); border-bottom-color: var(--orange); }
+
+    /* ── Main content ── */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+      position: relative; z-index: 1;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 44px;
+      animation: fadeUp 0.5s ease both;
+    }
+    .section:nth-child(1){animation-delay:0.05s}
+    .section:nth-child(2){animation-delay:0.1s}
+    .section:nth-child(3){animation-delay:0.15s}
+    .section:nth-child(4){animation-delay:0.2s}
+    .section:nth-child(5){animation-delay:0.25s}
+    .section:nth-child(6){animation-delay:0.3s}
+    .section:nth-child(7){animation-delay:0.35s}
+    .section:nth-child(8){animation-delay:0.4s}
+    .section:nth-child(9){animation-delay:0.45s}
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--orange), var(--orange2));
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      color: var(--ink-mid);
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13.5px;
+    }
+    .data-table thead tr {
+      background: linear-gradient(135deg, var(--orange), var(--orange2));
+    }
+    .data-table thead th {
+      padding: 10px 14px;
+      text-align: left;
+      color: #fff;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .data-table thead th:first-child { border-radius: 10px 0 0 0; }
+    .data-table thead th:last-child  { border-radius: 0 10px 0 0; }
+    .data-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+    .data-table tbody tr:last-child { border-bottom: none; }
+    .data-table tbody tr:hover { background: #FFF8F1; }
+    .data-table tbody td {
+      padding: 10px 14px;
+      color: var(--ink-mid);
+      vertical-align: top;
+    }
+    .data-table tbody td:first-child { font-weight: 600; color: var(--ink); }
+    .data-table-wrap {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 16px 0;
+    }
+
+    /* ── Highlight box ── */
+    .highlight-box {
+      background: linear-gradient(135deg, #FFF8F0, #FFF3E6);
+      border: 1.5px solid rgba(255,140,0,0.2);
+      border-left: 4px solid var(--orange);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+    .highlight-box strong { color: var(--ink); }
+
+    /* ── Pills ── */
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 99px;
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink-mid);
+    }
+    .pill.green { border-color: rgba(16,185,129,0.3); color: #065f46; background: #F0FDF9; }
+    .pill.orange { border-color: rgba(255,140,0,0.3); color: #92400e; background: #FFF8F0; }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: linear-gradient(135deg, #1A1410, #2C1F0F);
+      border-radius: 18px;
+      padding: 28px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 150px; height: 150px;
+      background: radial-gradient(circle, rgba(255,140,0,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 8px;
+      position: relative; z-index: 1;
+    }
+    .contact-card p {
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      margin-bottom: 18px;
+      position: relative; z-index: 1;
+    }
+    .contact-card a {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--orange), var(--orange2));
+      color: #fff;
+      text-decoration: none;
+      padding: 11px 24px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 700;
+      position: relative; z-index: 1;
+      transition: opacity 0.2s;
+    }
+    .contact-card a:hover { opacity: 0.88; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 12px;
+      color: var(--ink-soft);
+      border-top: 1px solid var(--border);
+      position: relative; z-index: 1;
+    }
+    footer strong { color: var(--ink-mid); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="header-badge"><span></span> Legal Document</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <div class="header-meta">
+    Clickoy India &nbsp;·&nbsp; <strong>Effective: 14 March 2026</strong> &nbsp;·&nbsp; Last updated: 14 March 2026
+  </div>
+</header>
+
+<!-- ═══ STICKY TOC ═══ -->
+<nav class="toc-strip">
+  <a href="#overview">Overview</a>
+  <a href="#collect">What We Collect</a>
+  <a href="#use">How We Use It</a>
+  <a href="#storage">Storage</a>
+  <a href="#sharing">Sharing</a>
+  <a href="#rights">Your Rights</a>
+  <a href="#children">Children</a>
+  <a href="#security">Security</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<main>
+
+  <!-- 1. Overview -->
+  <div class="section" id="overview">
+    <div class="section-num">1</div>
+    <h2>Overview</h2>
+    <p>
+      Clickoy ("we", "our", "us") is a professional services platform that connects clients with
+      skilled experts across India. This Privacy Policy explains what personal data we collect,
+      why we collect it, how it is stored, and the rights you have over your information.
+    </p>
+    <p>
+      By using the Clickoy mobile application or website, you agree to the practices described in
+      this policy. If you do not agree, please do not use the app.
+    </p>
+    <div class="highlight-box">
+      <strong>Short version:</strong> We collect only what is necessary to run the platform.
+      We do not sell your data, share it with advertisers, or use it for any purpose other than
+      operating Clickoy.
+    </div>
+  </div>
+
+  <!-- 2. What We Collect -->
+  <div class="section" id="collect">
+    <div class="section-num">2</div>
+    <h2>What We Collect</h2>
+    <p>We collect different data depending on whether you use Clickoy as a <strong>Client</strong> or as an <strong>Expert</strong>.</p>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Client</th>
+            <th>Expert</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Phone number</td><td>✅</td><td>✅</td><td>Account login & identity</td></tr>
+          <tr><td>Full name</td><td>✅</td><td>✅</td><td>Profile display</td></tr>
+          <tr><td>Email address</td><td>✅</td><td>✅</td><td>Optional contact info</td></tr>
+          <tr><td>Date of birth</td><td>✅</td><td>✅</td><td>Age verification (18+)</td></tr>
+          <tr><td>Gender</td><td>✅</td><td>✅</td><td>Profile info (optional)</td></tr>
+          <tr><td>Precise location (GPS)</td><td>✅ optional</td><td>✅ optional</td><td>Expert: saved as service address on profile. Client: used to find nearby experts (not stored)</td></tr>
+          <tr><td>Profile photo</td><td>✅</td><td>✅</td><td>Profile display</td></tr>
+          <tr><td>Aadhaar number</td><td>❌</td><td>✅</td><td>Expert identity verification</td></tr>
+          <tr><td>Driving licence no.</td><td>❌</td><td>✅</td><td>Expert identity verification</td></tr>
+          <tr><td>Organisation name</td><td>❌</td><td>✅</td><td>Expert profile display</td></tr>
+          <tr><td>Document uploads</td><td>❌</td><td>✅</td><td>KYC verification</td></tr>
+          <tr><td>Services & pricing</td><td>❌</td><td>✅</td><td>Shown to clients</td></tr>
+          <tr><td>Portfolio images</td><td>❌</td><td>✅</td><td>Shown on expert profile</td></tr>
+          <tr><td>Chat messages</td><td>✅</td><td>✅</td><td>In-app communication</td></tr>
+          <tr><td>Coin / recharge history</td><td>❌</td><td>✅</td><td>Wallet & billing records</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:13px;color:var(--ink-soft);">
+      We do <strong>not</strong> collect device identifiers, browsing history, contacts, microphone audio,
+      or any data unrelated to the platform.
+    </p>
+  </div>
+
+  <!-- 3. How We Use It -->
+  <div class="section" id="use">
+    <div class="section-num">3</div>
+    <h2>How We Use Your Data</h2>
+    <div class="pill-row">
+      <span class="pill orange">🔐 Account management</span>
+      <span class="pill orange">💬 In-app messaging</span>
+      <span class="pill orange">🗺️ Expert discovery</span>
+      <span class="pill orange">💳 Billing & wallet</span>
+      <span class="pill orange">✅ Identity verification</span>
+      <span class="pill orange">📊 Service listings</span>
+    </div>
+    <p>Specifically, we use your data to:</p>
+    <p>
+      Identify and authenticate your account using your phone number via OTP.
+      Display your profile to other users of the platform. Allow clients to discover, contact,
+      and chat with experts. Process coin recharges and maintain wallet history for experts.
+      Verify expert identities through document uploads. Show ratings and reviews.
+      Send in-app notifications about chat requests and messages.
+    </p>
+    <p>We do <strong>not</strong> use your data for advertising, profiling, or any automated decision-making.</p>
+  </div>
+
+  <!-- 4. Storage -->
+  <div class="section" id="storage">
+    <div class="section-num">4</div>
+    <h2>Data Storage &amp; Retention</h2>
+    <p>
+      All user data is stored on our own <strong>PocketBase server hosted at clickoy.in</strong>,
+      located in India. We do not use third-party cloud databases such as Firebase, AWS, or Azure
+      for storing personal data.
+    </p>
+    <div class="highlight-box">
+      <strong>Retention:</strong> Your data is retained for as long as your account is active.
+      When you delete your account through the app, all your personal data, chat history,
+      documents, and records are permanently deleted from our servers with no recovery possible.
+    </div>
+    <p>
+      Uploaded files (profile photos, documents, portfolio images) are stored as files on the
+      same server and deleted alongside your account record upon account deletion.
+    </p>
+  </div>
+
+  <!-- 5. Sharing -->
+  <div class="section" id="sharing">
+    <div class="section-num">5</div>
+    <h2>Data Sharing &amp; Third Parties</h2>
+    <p>We <strong>do not sell, rent, or trade</strong> your personal data to any third party.</p>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Third Party</th><th>Purpose</th><th>Data Shared</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google Fonts</td><td>Font loading (UI)</td><td>None — font files only</td></tr>
+          <tr><td>Font Awesome (cdnjs)</td><td>Icons (UI)</td><td>None — icon files only</td></tr>
+          <tr><td>OpenStreetMap / Nominatim</td><td>Reverse geocoding — converts GPS coordinates to a readable address</td><td>GPS coordinates only, no name or account data</td></tr>
+          <tr><td>Flatpickr (cdn.jsdelivr)</td><td>Date picker (UI)</td><td>None</td></tr>
+          <tr><td>Razorpay / Payment gateway</td><td>Coin recharge processing</td><td>Transaction amount only</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      We may disclose data if required by Indian law or a valid court order. We will notify
+      you where legally permissible before any such disclosure.
+    </p>
+  </div>
+
+  <!-- 6. Your Rights -->
+  <div class="section" id="rights">
+    <div class="section-num">6</div>
+    <h2>Your Rights</h2>
+    <p>You have the following rights over your personal data at all times:</p>
+    <div class="pill-row">
+      <span class="pill green">✅ Access your data</span>
+      <span class="pill green">✅ Correct your data</span>
+      <span class="pill green">✅ Delete your account</span>
+      <span class="pill green">✅ Export your data</span>
+      <span class="pill green">✅ Withdraw consent</span>
+    </div>
+    <p>
+      <strong>Delete account:</strong> Open the Clickoy app → Profile → scroll to the bottom →
+      tap <em>Delete Account</em>. This immediately and permanently deletes all your data from
+      our servers. You can also email us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aad9dfdadac5d8deeac9c6c3c9c1c5d384c3c4">[email&#160;protected]</a></strong> to request deletion.
+    </p>
+    <p>
+      <strong>Edit your data:</strong> You can update your name, photo, email, and other profile
+      details at any time from within the app.
+    </p>
+    <p>
+      <strong>Data export / access requests:</strong> Email us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb989e9b9b84999fab88878288808492c58285">[email&#160;protected]</a> and we will
+      respond within 30 days as required under the <strong>Digital Personal Data Protection Act, 2023 (India)</strong>.
+    </p>
+  </div>
+
+  <!-- 7. Children -->
+  <div class="section" id="children">
+    <div class="section-num">7</div>
+    <h2>Children's Privacy</h2>
+    <p>
+      Clickoy is not intended for use by persons under the age of <strong>18</strong>.
+      We do not knowingly collect personal data from minors. Expert registration requires
+      date of birth verification to confirm the user is 18 or older.
+    </p>
+    <p>
+      If you believe a minor has created an account, please contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cdbeb8bdbda2bfb98daea1a4aea6a2b4e3a4a3">[email&#160;protected]</a>
+      and we will delete the account immediately.
+    </p>
+  </div>
+
+  <!-- 8. Security -->
+  <div class="section" id="security">
+    <div class="section-num">8</div>
+    <h2>Security</h2>
+    <p>
+      All data is transmitted over <strong>HTTPS (TLS)</strong>. Our server enforces
+      <code style="background:var(--border);padding:2px 6px;border-radius:5px;font-size:13px;">cleartext: false</code>
+      — plain HTTP connections are rejected.
+    </p>
+    <p>
+      Account access is protected by <strong>OTP-based login</strong> — there are no passwords
+      to leak. Sensitive documents (Aadhaar, DL) are stored as private files accessible only
+      through authenticated requests.
+    </p>
+    <p>
+      While we take reasonable measures to protect your data, no system is 100% secure.
+      If you discover a security vulnerability, please report it responsibly to
+      <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d1a2a4a1a1bea3a591b2bdb8b2babea8ffb8bf">[email&#160;protected]</a>.
+    </p>
+  </div>
+
+  <!-- 9. Changes -->
+  <div class="section" id="changes">
+    <div class="section-num">9</div>
+    <h2>Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. When we do, we will update the
+      "Last updated" date at the top of this page. For significant changes, we will notify
+      users through an in-app notification.
+    </p>
+    <p>
+      Continued use of the app after changes are posted constitutes acceptance of the
+      updated policy.
+    </p>
+  </div>
+
+  <hr />
+
+  <!-- Contact -->
+  <div 
