@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Clickoy India</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --orange:   #FF8C00;
@@ -15,13 +16,14 @@
       --bg:       #FDFAF6;
       --surface:  #FFFFFF;
       --border:   #F0E8DE;
+      --red:      #EF4444;
+      --red2:     #DC2626;
+      --green:    #10B981;
       --radius:   14px;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--bg);
@@ -30,7 +32,6 @@
       font-size: 15px;
     }
 
-    /* ── Grain texture overlay ── */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -135,6 +136,8 @@
       white-space: nowrap;
     }
     .toc-strip a:hover { color: var(--orange); border-bottom-color: var(--orange); }
+    .toc-strip a.delete-tab { color: var(--red); }
+    .toc-strip a.delete-tab:hover { color: var(--red); border-bottom-color: var(--red); }
 
     /* ── Main content ── */
     main {
@@ -158,6 +161,8 @@
     .section:nth-child(7){animation-delay:0.35s}
     .section:nth-child(8){animation-delay:0.4s}
     .section:nth-child(9){animation-delay:0.45s}
+    .section:nth-child(10){animation-delay:0.5s}
+    .section:nth-child(11){animation-delay:0.55s}
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -175,6 +180,9 @@
       color: #fff;
       margin-bottom: 10px;
       font-family: 'Playfair Display', serif;
+    }
+    .section-num.red {
+      background: linear-gradient(135deg, var(--red), var(--red2));
     }
 
     h2 {
@@ -243,6 +251,11 @@
       line-height: 1.7;
     }
     .highlight-box strong { color: var(--ink); }
+    .highlight-box.red {
+      background: linear-gradient(135deg, #FEF2F2, #FEE2E2);
+      border: 1.5px solid rgba(239,68,68,0.2);
+      border-left: 4px solid var(--red);
+    }
 
     /* ── Pills ── */
     .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
@@ -256,14 +269,177 @@
       font-weight: 500;
       color: var(--ink-mid);
     }
-    .pill.green { border-color: rgba(16,185,129,0.3); color: #065f46; background: #F0FDF9; }
-    .pill.orange { border-color: rgba(255,140,0,0.3); color: #92400e; background: #FFF8F0; }
+    .pill.green  { border-color: rgba(16,185,129,0.3);  color: #065f46; background: #F0FDF9; }
+    .pill.orange { border-color: rgba(255,140,0,0.3);   color: #92400e; background: #FFF8F0; }
+    .pill.red    { border-color: rgba(239,68,68,0.3);   color: #b91c1c; background: #FEF2F2; }
 
     /* ── Divider ── */
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 40px 0;
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    /* ══════════════════════════════════════════
+       DELETE ACCOUNT SECTION STYLES
+    ══════════════════════════════════════════ */
+    .delete-section-header {
+      background: linear-gradient(135deg, #FEF2F2, #FEE2E2);
+      border: 1.5px solid rgba(239,68,68,0.2);
+      border-radius: 18px;
+      padding: 24px 22px 20px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .delete-section-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #fee2e2, #fecaca);
+      border: 1.5px solid rgba(239,68,68,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--red); flex-shrink: 0;
+    }
+    .delete-section-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: #b91c1c; margin-bottom: 4px;
+    }
+    .delete-section-header p {
+      font-size: 13px; color: #991b1b;
+      margin: 0; line-height: 1.6;
+    }
+
+    /* Steps */
+    .steps-list { margin: 16px 0; }
+    .step-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      margin-bottom: 12px; font-size: 13.5px; color: var(--ink-mid); line-height: 1.6;
+    }
+    .step-badge {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--orange2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 800; color: #fff; flex-shrink: 0; margin-top: 2px;
+    }
+    .step-badge.red { background: linear-gradient(135deg, var(--red), var(--red2)); }
+
+    /* Delete form */
+    .delete-form-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 22px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      margin-top: 20px;
+    }
+    .delete-form-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 6px;
+    }
+    .delete-form-card .sub {
+      font-size: 13px; color: var(--ink-soft);
+      margin-bottom: 20px; line-height: 1.6;
+    }
+    .form-label-del {
+      font-size: 11px; font-weight: 700;
+      color: var(--ink-mid); text-transform: uppercase;
+      letter-spacing: 0.5px; margin-bottom: 7px; display: block;
+    }
+    .phone-row {
+      display: flex; align-items: stretch;
+      border: 1.5px solid var(--border);
+      border-radius: 11px; overflow: hidden;
+      background: #FDFAF6;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      margin-bottom: 14px;
+    }
+    .phone-row:focus-within {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(255,140,0,0.1);
+    }
+    .phone-prefix {
+      padding: 0 12px;
+      background: rgba(255,140,0,0.06);
+      border-right: 1.5px solid var(--border);
+      display: flex; align-items: center;
+      font-size: 13px; font-weight: 700;
+      color: var(--ink-mid); gap: 5px; white-space: nowrap;
+    }
+    .phone-field {
+      flex: 1; padding: 12px 14px;
+      border: none; outline: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px; color: var(--ink);
+      background: transparent;
+    }
+    .phone-field::placeholder { color: var(--ink-soft); }
+    .confirm-field {
+      width: 100%;
+      border: 1.5px solid var(--border);
+      border-radius: 11px;
+      padding: 12px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px; color: var(--ink);
+      background: #FDFAF6; outline: none;
+      text-align: center; letter-spacing: 3px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      margin-bottom: 16px;
+    }
+    .confirm-field:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(239,68,68,0.1); }
+    .confirm-field.valid { border-color: var(--red); background: #FEF2F2; }
+
+    /* Status */
+    .del-status {
+      border-radius: 10px; padding: 12px 14px;
+      font-size: 13px; display: none;
+      align-items: center; gap: 9px;
+      margin-bottom: 14px; line-height: 1.5;
+      animation: fadeUp 0.3s ease;
+    }
+    .del-status.success { background: #F0FDF9; border: 1.5px solid rgba(16,185,129,0.2); color: #065f46; display: flex; }
+    .del-status.error   { background: #FEF2F2; border: 1.5px solid rgba(239,68,68,0.2);  color: #b91c1c; display: flex; }
+    .del-status.info    { background: #FFF8F0; border: 1.5px solid rgba(255,140,0,0.2);  color: #92400e; display: flex; }
+
+    /* Delete button */
+    .btn-del {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg, var(--red), var(--red2));
+      color: #fff; border: none; border-radius: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px; font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(239,68,68,0.25);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.2s;
+      opacity: 0.4; pointer-events: none;
+    }
+    .btn-del.ready { opacity: 1; pointer-events: auto; }
+    .btn-del.ready:active { transform: scale(0.98); box-shadow: 0 3px 10px rgba(239,68,68,0.15); }
+
+    /* Success state */
+    .del-success-card {
+      display: none;
+      text-align: center;
+      padding: 28px 20px;
+      animation: fadeUp 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    .del-success-icon {
+      width: 72px; height: 72px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #F0FDF9, #D1FAE5);
+      border: 1.5px solid rgba(16,185,129,0.25);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; color: var(--green);
+      box-shadow: 0 8px 24px rgba(16,185,129,0.15);
+      margin-bottom: 16px;
+    }
+    .del-success-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 8px;
+    }
+    .del-success-sub {
+      font-size: 13px; color: var(--ink-soft);
+      line-height: 1.65; max-width: 300px; margin: 0 auto;
     }
 
     /* ── Contact card ── */
@@ -343,6 +519,7 @@
   <a href="#rights">Your Rights</a>
   <a href="#children">Children</a>
   <a href="#security">Security</a>
+  <a href="#delete-account" class="delete-tab">🗑️ Delete Account</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -391,7 +568,7 @@
           <tr><td>Email address</td><td>✅</td><td>✅</td><td>Optional contact info</td></tr>
           <tr><td>Date of birth</td><td>✅</td><td>✅</td><td>Age verification (18+)</td></tr>
           <tr><td>Gender</td><td>✅</td><td>✅</td><td>Profile info (optional)</td></tr>
-          <tr><td>Precise location (GPS)</td><td>✅ optional</td><td>✅ optional</td><td>Expert: saved as service address on profile. Client: used to find nearby experts (not stored)</td></tr>
+          <tr><td>Precise location (GPS)</td><td>✅ optional</td><td>✅ optional</td><td>Expert: saved as service address. Client: find nearby experts (not stored)</td></tr>
           <tr><td>Profile photo</td><td>✅</td><td>✅</td><td>Profile display</td></tr>
           <tr><td>Aadhaar number</td><td>❌</td><td>✅</td><td>Expert identity verification</td></tr>
           <tr><td>Driving licence no.</td><td>❌</td><td>✅</td><td>Expert identity verification</td></tr>
@@ -445,7 +622,7 @@
     </p>
     <div class="highlight-box">
       <strong>Retention:</strong> Your data is retained for as long as your account is active.
-      When you delete your account through the app, all your personal data, chat history,
+      When you delete your account through the app or this page, all your personal data, chat history,
       documents, and records are permanently deleted from our servers with no recovery possible.
     </div>
     <p>
@@ -468,7 +645,7 @@
         <tbody>
           <tr><td>Google Fonts</td><td>Font loading (UI)</td><td>None — font files only</td></tr>
           <tr><td>Font Awesome (cdnjs)</td><td>Icons (UI)</td><td>None — icon files only</td></tr>
-          <tr><td>OpenStreetMap / Nominatim</td><td>Reverse geocoding — converts GPS coordinates to a readable address</td><td>GPS coordinates only, no name or account data</td></tr>
+          <tr><td>OpenStreetMap / Nominatim</td><td>Reverse geocoding</td><td>GPS coordinates only, no name or account data</td></tr>
           <tr><td>Flatpickr (cdn.jsdelivr)</td><td>Date picker (UI)</td><td>None</td></tr>
           <tr><td>Razorpay / Payment gateway</td><td>Coin recharge processing</td><td>Transaction amount only</td></tr>
         </tbody>
@@ -495,8 +672,8 @@
     </div>
     <p>
       <strong>Delete account:</strong> Open the Clickoy app → Profile → scroll to the bottom →
-      tap <em>Delete Account</em>. This immediately and permanently deletes all your data from
-      our servers. You can also email us at <strong>care [at] clickoy.in</strong> to request deletion.
+      tap <em>Delete Account</em>. Or use the <a href="#delete-account" style="color:var(--red);font-weight:600;">Delete Account form</a> on this page.
+      This immediately and permanently deletes all your data.
     </p>
     <p>
       <strong>Edit your data:</strong> You can update your name, photo, email, and other profile
@@ -559,7 +736,74 @@
 
   <hr />
 
-    <!-- Contact -->
+  <!-- ══════════════════════════════════════════
+       10. DELETE ACCOUNT
+  ══════════════════════════════════════════ -->
+  <div class="section" id="delete-account">
+    <div class="section-num red">10</div>
+    <h2>Delete Your Account</h2>
+
+    <div class="delete-section-header">
+      <div class="delete-section-icon"><i class="fas fa-user-slash"></i></div>
+      <div>
+        <h3>Permanent Account Deletion</h3>
+        <p>This works for both <strong>Client</strong> and <strong>Expert / Service Provider</strong> accounts. Enter your registered mobile number below to permanently erase your account and all associated data.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box red">
+      <strong>⚠️ This cannot be undone.</strong> All your data will be permanently deleted —
+      profile details, chat history, service listings, documents, contact info, and all account records.
+    </div>
+
+    <div class="steps-list">
+      <div class="step-item"><div class="step-badge red">1</div>Enter your registered mobile number (the one you used to sign up)</div>
+      <div class="step-item"><div class="step-badge red">2</div>Type <strong>DELETE</strong> in the confirmation field</div>
+      <div class="step-item"><div class="step-badge red">3</div>Click the delete button — all your data is immediately and permanently removed</div>
+    </div>
+
+    <div class="delete-form-card" id="deleteFormCard">
+      <h3>Account Deletion Form</h3>
+      <p class="sub">Works for Clients and Experts/Service Providers. No login required.</p>
+
+      <!-- Status -->
+      <div class="del-status" id="delStatus"><i class="fas fa-circle-info"></i><span id="delStatusText"></span></div>
+
+      <!-- Mobile -->
+      <label class="form-label-del">Registered Mobile Number</label>
+      <div class="phone-row">
+        <div class="phone-prefix">🇮🇳 +91</div>
+        <input class="phone-field" type="tel" id="delMobile" maxlength="10" inputmode="numeric" placeholder="10-digit mobile number" />
+      </div>
+
+      <!-- Confirm -->
+      <label class="form-label-del">Type "DELETE" to confirm</label>
+      <input class="confirm-field" type="text" id="delConfirm" placeholder="DELETE" autocomplete="off" />
+
+      <!-- Button -->
+      <button class="btn-del" id="delBtn" onclick="handleDelete()">
+        <i class="fas fa-trash-can"></i> Permanently Delete My Account
+      </button>
+    </div>
+
+    <!-- Success state -->
+    <div class="delete-form-card" id="deleteSuccessCard" style="display:none;">
+      <div class="del-success-card" style="display:block">
+        <div class="del-success-icon"><i class="fas fa-check"></i></div>
+        <div class="del-success-title">Account Deleted Successfully</div>
+        <div class="del-success-sub">Your Clickoy account and all associated data have been permanently deleted. You can register again anytime with the same number.</div>
+      </div>
+    </div>
+
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:16px;">
+      Prefer to delete via the app? Open Clickoy → Profile → scroll down → tap <em>Delete Account</em>.<br>
+      Or email us at <strong>care [at] clickoy.in</strong> and we'll handle it within 24 hours.
+    </p>
+  </div>
+
+  <hr />
+
+  <!-- Contact -->
   <div class="contact-card" id="contact">
     <h3>Questions or Requests?</h3>
     <p>We respond to all privacy inquiries within 30 days.</p>
@@ -575,6 +819,138 @@
   <br /><br />
   © 2026 Clickoy India. All rights reserved.
 </footer>
+
+<script>
+const PB_URL = 'https://clickoy.in';
+
+const delMobile  = document.getElementById('delMobile');
+const delConfirm = document.getElementById('delConfirm');
+const delBtn     = document.getElementById('delBtn');
+const delStatus  = document.getElementById('delStatus');
+const delStatusText = document.getElementById('delStatusText');
+
+function checkReady() {
+    const mobile  = delMobile.value.trim();
+    const confirm = delConfirm.value.trim().toUpperCase();
+    const valid   = /^[6-9]\d{9}$/.test(mobile) && confirm === 'DELETE';
+    delBtn.classList.toggle('ready', valid);
+    delConfirm.classList.toggle('valid', confirm === 'DELETE' && delConfirm.value.length > 0);
+}
+
+delMobile.addEventListener('input', checkReady);
+delConfirm.addEventListener('input', checkReady);
+delMobile.addEventListener('keypress', e => { if(!/\d/.test(e.key)) e.preventDefault(); });
+
+function showStatus(msg, type) {
+    delStatusText.textContent = msg;
+    delStatus.className = `del-status ${type}`;
+    delStatus.querySelector('i').className =
+        type === 'success' ? 'fas fa-circle-check' :
+        type === 'error'   ? 'fas fa-circle-exclamation' :
+                             'fas fa-spinner fa-spin';
+}
+
+async function handleDelete() {
+    const mobile = delMobile.value.trim();
+    if (!/^[6-9]\d{9}$/.test(mobile)) { showStatus('Please enter a valid 10-digit mobile number.', 'error'); return; }
+    if (delConfirm.value.trim().toUpperCase() !== 'DELETE') { showStatus('Please type DELETE to confirm.', 'error'); return; }
+
+    delBtn.disabled = true;
+    delBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Deleting your account…';
+    showStatus('Looking up your account…', 'info');
+
+    let found = false;
+
+    // ── 1. Client: check clientdata by mobile ──────────────────────────────
+    try {
+        const url = `${PB_URL}/api/collections/clientdata/records?filter=${encodeURIComponent('mobile="'+mobile+'"')}&perPage=1&skipTotal=1`;
+        const res = await fetch(url, { headers: { 'Content-Type': 'application/json' } });
+        if (res.ok) {
+            const data = await res.json();
+            if (data.items && data.items.length > 0) {
+                const rec = data.items[0];
+                found = true;
+                showStatus('Client account found. Deleting data…', 'info');
+
+                // Delete messages
+                try {
+                    const mRes = await fetch(`${PB_URL}/api/collections/messages/records?filter=${encodeURIComponent('sender_id="'+rec.id+'" || receiver_id="'+rec.id+'"')}&perPage=500&skipTotal=1`, { headers: { 'Content-Type': 'application/json' } });
+                    if (mRes.ok) {
+                        const mData = await mRes.json();
+                        for (const m of (mData.items || [])) {
+                            await fetch(`${PB_URL}/api/collections/messages/records/${m.id}`, { method: 'DELETE' }).catch(()=>{});
+                        }
+                    }
+                } catch(e) {}
+
+                // Delete chats
+                try {
+                    const cRes = await fetch(`${PB_URL}/api/collections/chat_clickoy/records?filter=${encodeURIComponent('client_id="'+rec.id+'"')}&perPage=500&skipTotal=1`, { headers: { 'Content-Type': 'application/json' } });
+                    if (cRes.ok) {
+                        const cData = await cRes.json();
+                        for (const c of (cData.items || [])) {
+                            await fetch(`${PB_URL}/api/collections/chat_clickoy/records/${c.id}`, { method: 'DELETE' }).catch(()=>{});
+                        }
+                    }
+                } catch(e) {}
+
+                // Delete client record
+                await fetch(`${PB_URL}/api/collections/clientdata/records/${rec.id}`, { method: 'DELETE' });
+            }
+        }
+    } catch(e) {}
+
+    // ── 2. Expert: check database by phone ────────────────────────────────
+    try {
+        const url = `${PB_URL}/api/collections/database/records?filter=${encodeURIComponent('phone="'+mobile+'"')}&perPage=1&skipTotal=1`;
+        const res = await fetch(url, { headers: { 'Content-Type': 'application/json' } });
+        if (res.ok) {
+            const data = await res.json();
+            if (data.items && data.items.length > 0) {
+                const rec = data.items[0];
+                found = true;
+                showStatus('Expert account found. Deleting data…', 'info');
+
+                // Delete services
+                try {
+                    const sRes = await fetch(`${PB_URL}/api/collections/services/records?filter=${encodeURIComponent('database_id="'+rec.id+'"')}&perPage=500&skipTotal=1`, { headers: { 'Content-Type': 'application/json' } });
+                    if (sRes.ok) {
+                        const sData = await sRes.json();
+                        for (const s of (sData.items || [])) {
+                            await fetch(`${PB_URL}/api/collections/services/records/${s.id}`, { method: 'DELETE' }).catch(()=>{});
+                        }
+                    }
+                } catch(e) {}
+
+                // Delete chats
+                try {
+                    const cRes = await fetch(`${PB_URL}/api/collections/chat_clickoy/records?filter=${encodeURIComponent('expert_id="'+rec.id+'"')}&perPage=500&skipTotal=1`, { headers: { 'Content-Type': 'application/json' } });
+                    if (cRes.ok) {
+                        const cData = await cRes.json();
+                        for (const c of (cData.items || [])) {
+                            await fetch(`${PB_URL}/api/collections/chat_clickoy/records/${c.id}`, { method: 'DELETE' }).catch(()=>{});
+                        }
+                    }
+                } catch(e) {}
+
+                // Delete expert record
+                await fetch(`${PB_URL}/api/collections/database/records/${rec.id}`, { method: 'DELETE' });
+            }
+        }
+    } catch(e) {}
+
+    // ── Result ─────────────────────────────────────────────────────────────
+    if (found) {
+        document.getElementById('deleteFormCard').style.display   = 'none';
+        document.getElementById('deleteSuccessCard').style.display = 'block';
+    } else {
+        showStatus('No account found with this mobile number. Please check and try again.', 'error');
+        delBtn.disabled = false;
+        delBtn.innerHTML = '<i class="fas fa-trash-can"></i> Permanently Delete My Account';
+        checkReady();
+    }
+}
+</script>
 
 </body>
 </html>
